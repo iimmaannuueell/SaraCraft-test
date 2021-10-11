@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
+use App\Exports\UsersExport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -27,5 +29,12 @@ class UserController extends Controller
     public function create()
     {
         return view('create-user');
+    }
+
+
+    public function exportUser()
+    {
+        // return (new UsersExport)->download('users.csv', \Maatwebsite\Excel\Excel::CSV);
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 }

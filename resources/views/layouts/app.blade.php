@@ -31,14 +31,14 @@
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest
-                        <a class="no-underline hover:underline" href="{{ url('/user') }}">{{ __('User') }}</a>
-                        <a class="no-underline hover:underline" href="{{ url('/user/create') }}">{{ __('Create User') }}</a>
-                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        {{-- <a class="no-underline hover:underline" href="{{ url('/user') }}">{{ __('User') }}</a> --}}
+                        {{-- <a class="no-underline hover:underline" href="{{ url('/user/create') }}">{{ __('Create User') }}</a> --}}
+                        {{-- <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
                         @if (Route::has('register'))
-                            <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            {{-- <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
                         @endif
                     @else
-                        <span>{{ Auth::user()->name }}</span>
+                        {{-- <span>{{ Auth::user()->name }}</span> --}}
 
                         <a href="{{ route('logout') }}"
                            class="no-underline hover:underline"

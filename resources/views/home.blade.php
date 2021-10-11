@@ -26,10 +26,18 @@
                 Create New Patient
             </a>&nbsp;&nbsp;&nbsp;&nbsp;
 
-
             <a href="{{ route('observation') }}" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
                 Patient Observation
-            </a>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;
+        
+            <a href="{{ route('users.export') }}" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
+                Export users
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            {{-- <a href="{{ route('observation.export') }}" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
+                Export Observation
+            </a>&nbsp;&nbsp;&nbsp;&nbsp; --}}
+            
         </div>
 
     </section>

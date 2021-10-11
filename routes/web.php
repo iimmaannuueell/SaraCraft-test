@@ -13,20 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\PatientController::class, 'index'])->name('home');
+Route::get('/', [\App\Http\Controllers\PatientController::class, 'index'])->name('home');
 Route::get('/create', [\App\Http\Controllers\PatientController::class, 'create'])->name('patient.create');
 
 Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('show.user');
 Route::get('/user/create', [\App\Http\Controllers\UserController::class, 'create'])->name('create.user');
+Route::get('/user/export', [\App\Http\Controllers\UserController::class, 'exportUser'])->name('users.export');
 
 Route::get('/oservation', [\App\Http\Controllers\PatientController::class, 'observation'])->name('observation');
+Route::get('/observation/export', [\App\Http\Controllers\PatientController::class, 'observationExport'])->name('observation.export');
 
-// Route::get('patients', function () {
-//     return view('');
-// });
 

@@ -36,7 +36,12 @@ class PatientController extends Controller
 
     public function observation()
     {
-        $patient = Patient::all();
-        return view('patient-observation', ['patient' => $patient]);
+        return view('patient-observation',);
+    }
+
+    public function observationExport()
+    {
+        
+        return view('export-observation');
     }
 }
