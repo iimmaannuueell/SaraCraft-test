@@ -18,5 +18,15 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [\App\Http\Controllers\PatientController::class, 'index'])->name('home');
+Route::get('/create', [\App\Http\Controllers\PatientController::class, 'create'])->name('patient.create');
+
+Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('show.user');
+Route::get('/user/create', [\App\Http\Controllers\UserController::class, 'create'])->name('create.user');
+
+Route::get('/oservation', [\App\Http\Controllers\PatientController::class, 'observation'])->name('observation');
+
+// Route::get('patients', function () {
+//     return view('');
+// });
 

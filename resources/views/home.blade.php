@@ -10,18 +10,36 @@
             </div>
         @endif
 
-        <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
+    {{-- <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+        Dashboard
+    </header> --}}
 
-            <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                Dashboard
-            </header>
+    {{-- <livewire:creat-patient/> --}}
+    <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-            <div class="w-full p-6">
-                <p class="text-gray-700">
-                    You are logged in!
-                </p>
-            </div>
-        </section>
-    </div>
+        <div class="p-3">
+            <a href="{{ route('create.user') }}" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
+                Create New User
+            </a>&nbsp;&nbsp;
+
+            <a href="{{ route('patient.create') }}" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
+                Create New Patient
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+            <a href="{{ route('observation') }}" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
+                Patient Observation
+            </a>
+        </div>
+
+    </section>
+    <br><br>
+
+
+    <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
+
+            <livewire:show-patient 
+            />
+    </section
 </main>
 @endsection

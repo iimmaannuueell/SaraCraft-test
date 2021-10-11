@@ -14,6 +14,11 @@
     
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @livewireStyles
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
@@ -26,6 +31,8 @@
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest
+                        <a class="no-underline hover:underline" href="{{ url('/user') }}">{{ __('User') }}</a>
+                        <a class="no-underline hover:underline" href="{{ url('/user/create') }}">{{ __('Create User') }}</a>
                         <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @if (Route::has('register'))
                             <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -47,5 +54,7 @@
 
         @yield('content')
     </div>
+
+    @livewireScripts
 </body>
 </html>
